@@ -18,7 +18,25 @@ var number1 : Int = 20
 var hello1 : String = "Hello"
 var point1 : Double = 3.4
 
+val fix = 20
+
+// Variable or Value ??
+// - 1. 값이 변하지 않는다면 Value == val (상수)
+// - 2. 값이 변한다면 Variable == var(변수)
+// - 3. 값이 변할지 모르겠다면 Value == val (상수)
 
 fun main(array: Array<String>){
+
+    println(number)
+
     number = 20
+
+    println(number)
+
+    println(number1)
+    println(hello1)
+    println(point1)
+    println(fix)
+
+
 }
