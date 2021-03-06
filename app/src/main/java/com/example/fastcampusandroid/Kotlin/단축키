@@ -4,4 +4,7 @@ Option + command + L
 2. Run
 Control + Shift + R
 
-3.
+3. 변수 검색
+Command + F
+4. 변수 Replace
+Command + R

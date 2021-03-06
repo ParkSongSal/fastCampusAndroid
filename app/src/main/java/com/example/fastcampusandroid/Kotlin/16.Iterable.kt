@@ -30,7 +30,6 @@ fun main(array : Array<String>){
     a.forEach{
         println(it)
     }
-    println()
 
     // 반복하는 방법 (4)
     a.forEach{ item ->
