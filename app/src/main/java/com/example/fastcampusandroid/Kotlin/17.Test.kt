@@ -34,7 +34,7 @@ fun first(){
     println(ary1)
     println(ary2)*/
     val list1 = MutableList(9, {0})
-    val list2 = MutableList(9, {true})
+    val list2 = MutableList(9) { true }
     for (i in 0 until 9){
         list1[i] = i + 1
     }
