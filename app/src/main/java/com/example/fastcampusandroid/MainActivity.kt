@@ -7,6 +7,7 @@ import android.widget.ListView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.fastcampusandroid.adapters.MyAdapter
+import com.example.fastcampusandroid.common.Common
 import com.example.fastcampusandroid.models.ListItem
 
 class MainActivity : AppCompatActivity() {
@@ -15,7 +16,7 @@ class MainActivity : AppCompatActivity() {
 
     private var mDataList = mutableListOf<ListItem>()
     private var mDataListBackup = mutableListOf<ListItem>()
-    private var mAdapter : MyAdapter? = null
+    private var mAdapter: MyAdapter? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -23,10 +24,8 @@ class MainActivity : AppCompatActivity() {
         mListView = findViewById<ListView>(R.id.list_view)
 
         //데이터터
-        //데이터터
         mDataList = mutableListOf()
         addItem("1) firstText!!", "2021-03-19", fileTestActivity::class.java)
-
 
         mAdapter = MyAdapter(mDataList)
 
@@ -37,16 +36,11 @@ class MainActivity : AppCompatActivity() {
 
         mAdapter!!.notifyDataSetChanged()
 
-
-        //이벤트
         //이벤트
         mListView?.onItemClickListener = OnItemClickListener { parent, view, position, id ->
             val intent = Intent(applicationContext, mDataList[position].getCls())
-            Toast.makeText(
-                this,
-                mDataList[position].getTitle().toString() + "로 이동!",
-                Toast.LENGTH_SHORT
-            ).show()
+            val common = Common()
+            common.customToast(this@MainActivity, mDataList[position].getTitle().toString() + "로 이동!" )
             startActivity(intent)
         }
     }
