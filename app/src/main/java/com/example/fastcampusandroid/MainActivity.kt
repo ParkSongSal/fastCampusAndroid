@@ -2,6 +2,7 @@ package com.example.fastcampusandroid
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.AdapterView.OnItemClickListener
 import android.widget.ListView
 import android.widget.Toast
@@ -26,6 +27,7 @@ class MainActivity : AppCompatActivity() {
         //데이터터
         mDataList = mutableListOf()
         addItem("1) firstText!!", "2021-03-19", fileTestActivity::class.java)
+        addItem("2) Listener!!", "2021-03-21", ListenerActivity::class.java)
 
         mAdapter = MyAdapter(mDataList)
 
@@ -43,6 +45,10 @@ class MainActivity : AppCompatActivity() {
             common.customToast(this@MainActivity, mDataList[position].getTitle().toString() + "로 이동!" )
             startActivity(intent)
         }
+
+
+
+        Log.d("Life_Cycle", "onCrate!!!!!!!!!!!")
     }
 
 
@@ -51,4 +57,29 @@ class MainActivity : AppCompatActivity() {
         mDataList.add(item)
     }
 
+
+    override fun onStart() {
+        super.onStart()
+        Log.d("Life_Cycle", "onStart!!!!!!!!")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.d("Life_Cycle", "onResume!!!!!!!!")
+    }
+
+    override fun onPause() {
+        super.onPause()
+        Log.d("Life_Cycle", "onPause!!!!!!!!")
+    }
+
+    override fun onStop() {
+        super.onStop()
+        Log.d("Life_Cycle", "onStop!!!!!!!!")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.d("Life_Cycle", "onDestory!!!!!!!!")
+    }
 }
