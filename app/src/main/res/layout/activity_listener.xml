@@ -12,4 +12,11 @@
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:text="Hello!"/>
+
+    <ImageView
+        android:id="@+id/gradient_img"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/gradient"/>
+
 </LinearLayout>
