@@ -29,6 +29,7 @@ class MainActivity : AppCompatActivity() {
         addItem("1) firstText!!", "2021-03-19", fileTestActivity::class.java)
         addItem("2) Listener!!", "2021-03-21", ListenerActivity::class.java)
         addItem("3) Calculator", "2021-03-22", CalculatorActivity::class.java)
+        addItem("4) Intent1", "2021-03-28", IntentActivity1::class.java)
 
         mAdapter = MyAdapter(mDataList)
 
