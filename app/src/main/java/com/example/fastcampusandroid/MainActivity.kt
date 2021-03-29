@@ -30,6 +30,7 @@ class MainActivity : AppCompatActivity() {
         addItem("2) Listener!!", "2021-03-21", ListenerActivity::class.java)
         addItem("3) Calculator", "2021-03-22", CalculatorActivity::class.java)
         addItem("4) Intent1", "2021-03-28", IntentActivity1::class.java)
+        addItem("5) IntentTest(OpenUrl)", "2021-03-29", IntentTestActivity::class.java)
 
         mAdapter = MyAdapter(mDataList)
 
