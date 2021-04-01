@@ -8,6 +8,8 @@ import java.io.Serializable
 @Entity(tableName = "tb_users")
 data class Users(@PrimaryKey(autoGenerate = true) val id:Int,
                  var NickName : String,
-                 var PhoneNum : String)
+                 var PhoneNum : String) {
+
+}
 
 

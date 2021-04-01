@@ -15,4 +15,7 @@ interface UserDAO {
 
     @Insert
     fun insertAll(vararg users: Users)
+
+    @Query("SELECT COUNT(id) FROM `tb_users`")
+    fun getCount(): Int
 }
