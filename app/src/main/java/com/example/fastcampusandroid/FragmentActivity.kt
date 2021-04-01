@@ -11,9 +11,17 @@ class FragmentActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_fragment)
 
+        val fragmentOne : FragmentOne = FragmentOne()
+
+        //프래그먼트에 data를 넣어주는 방법
+        val bundle = Bundle()
+        bundle.putString("hello", "hello")
+        fragmentOne.arguments = bundle
+
+
         //프래그먼트를 동적으로 추가하는 방법
         addFragBtn.setOnClickListener{
-            val fragmentOne : FragmentOne = FragmentOne()
+            //프래그먼트를 붙이는 방법 replace/add
             val fragmentManager = supportFragmentManager
 
             // Transaction -> 작업의 단위 -> 시작과 끝이 있다.
@@ -26,6 +34,13 @@ class FragmentActivity : AppCompatActivity() {
             * 3. commitAllowingStateLoss -> 잘 사용안함.
             * */
 
+        }
+        delFragBtn.setOnClickListener{
+            // 프래그먼트 remove(다시 붙일수있음) / detach(다시 붙이지 못함) 하는 방법
+            val fragmentManager = supportFragmentManager
+            val fragmentTransaction = fragmentManager.beginTransaction()
+            fragmentTransaction.remove(fragmentOne)
+            fragmentTransaction.commit()
         }
 
         Log.d("Life_Cycle", "onCreate!!!!!!!!")

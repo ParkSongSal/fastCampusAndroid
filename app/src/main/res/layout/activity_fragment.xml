@@ -26,7 +26,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Frag추가!"/>
-
+    <Button
+        android:id="@+id/delFragBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Frag제거!"/>
     <LinearLayout
         android:id="@+id/container"
         android:layout_width="match_parent"
