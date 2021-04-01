@@ -6,7 +6,13 @@ import android.util.Log
 import com.example.fastcampusandroid.Fragment.FragmentOne
 import kotlinx.android.synthetic.main.activity_fragment.*
 
-class FragmentActivity : AppCompatActivity() {
+class FragmentActivity : AppCompatActivity(), FragmentOne.OnDataPassListener {
+
+
+    override fun onDataPass(data: String?) {
+        Log.d("TAG","" + data)
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_fragment)
@@ -35,6 +41,8 @@ class FragmentActivity : AppCompatActivity() {
             * */
 
         }
+
+        //프래그먼트를 제거하는 방법(detach)
         delFragBtn.setOnClickListener{
             // 프래그먼트 remove(다시 붙일수있음) / detach(다시 붙이지 못함) 하는 방법
             val fragmentManager = supportFragmentManager
@@ -70,4 +78,6 @@ class FragmentActivity : AppCompatActivity() {
         super.onDestroy()
         Log.d("Life_Cycle", "onDestory!!!!!!!!")
     }
+
+
 }
