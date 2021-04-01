@@ -10,6 +10,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.fastcampusandroid.R
 import com.example.fastcampusandroid.Room.Users
+import com.example.fastcampusandroid.Room.Users2
 
 class UsersAdapter() : RecyclerView.Adapter<UsersAdapter.ViewHolder>() {
 

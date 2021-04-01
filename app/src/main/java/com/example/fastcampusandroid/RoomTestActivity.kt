@@ -6,7 +6,9 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.fastcampusandroid.Room.UserDataBase
 import com.example.fastcampusandroid.Room.Users
+import com.example.fastcampusandroid.Room.Users2
 import com.example.fastcampusandroid.adapters.UsersAdapter
+import com.example.fastcampusandroid.common.Common
 import kotlinx.android.synthetic.main.activity_room_test.*
 
 var db : UserDataBase? = null
@@ -16,6 +18,8 @@ var userPhone : String = ""
 var usersList = mutableListOf<Users>()
 
 private var mAdapter: UsersAdapter? = null
+
+val common = Common()
 
 class RoomTestActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,7 +36,7 @@ class RoomTestActivity : AppCompatActivity() {
             userNickName = edit_txt.text.toString()
             userPhone = "010-5545-3823"
 
-            val user = Users(0, userNickName, userPhone)
+            val user = Users(0, userNickName, userPhone, common.nowDate())
 
             usersList.add(user)
 
@@ -58,7 +62,7 @@ class RoomTestActivity : AppCompatActivity() {
 
             for (i in getRows until usersList.size) {
                 if (usersList.size > getRows) {
-                    db?.userDao()?.insertAll(Users(0, usersList[i].NickName, usersList[i].PhoneNum))
+                    db?.userDao()?.insertAll(Users(0, usersList[i].NickName, usersList[i].PhoneNum, common.nowDate()))
                     Log.d("TAG", "Save ===========> " + i + " 번째 " + usersList[i].toString())
                 } else {
                     Log.d("TAG", "Break!!! ===========>")
