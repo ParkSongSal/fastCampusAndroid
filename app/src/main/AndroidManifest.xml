@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".RoomTestActivity"></activity>
+        <activity android:name=".FragmentActivity"></activity>
+        <activity android:name=".RoomTestActivity" />
         <activity android:name=".IntentTestActivity" />
         <activity android:name=".IntentActivity2" />
         <activity android:name=".IntentActivity1" />
