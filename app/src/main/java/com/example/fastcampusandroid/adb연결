@@ -1,0 +1,9 @@
+1. 환경변수 설정
+Path 에 C:\Users\psm2.DESKTOP-GR4J9ST\AppData\Local\Android\Sdk\platform-tools 추가
+
+2. Terminal 에서
+adb devices 조회
+
+3. adb -s emulator-5556 forward tcp:8080 tcp:8080 연결
+
+4. localhost:8080/ 접속 후 Local Database 확인
