@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ResourceActivity">
+
+    <TextView
+        android:id="@+id/resourceTxt1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/introTxt"
+        android:textColor="@color/colorWhite"
+        android:background="@color/colorRed"/>
+
+    <TextView
+        android:id="@+id/resourceTxt2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="hello"
+        android:background="#DDBDBD"/>
+
+    <TextView
+        android:id="@+id/resourceTxt3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="hello"
+        android:background="#D5DF9C"/>
+
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/resBtn"
+        android:background="@color/colorPrimary"/>
+</LinearLayout>

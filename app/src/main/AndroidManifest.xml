@@ -8,8 +8,9 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".NullSafetyActivity"></activity>
+        android:theme="@style/MyTheme">
+        <activity android:name=".ResourceActivity"></activity>
+        <activity android:name=".NullSafetyActivity" />
         <activity android:name=".FragmentActivity" />
         <activity android:name=".RoomTestActivity" />
         <activity android:name=".IntentTestActivity" />

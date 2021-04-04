@@ -34,6 +34,7 @@ class MainActivity : AppCompatActivity() {
         addItem("6) Room 라이브러리", "2021-03-31", RoomTestActivity::class.java)
         addItem("7) Fragment", "2021-04-01", FragmentActivity::class.java)
         addItem("8) NullSafety", "2021-04-04", NullSafetyActivity::class.java)
+        addItem("9) Resoucre", "2021-04-04", ResourceActivity::class.java)
 
 
         mAdapter = MyAdapter(mDataList)

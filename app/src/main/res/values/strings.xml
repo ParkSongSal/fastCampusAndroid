@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">fastCampusAndroid</string>
+    <string name="introTxt">인사말이요 안녕하세요 저는 누구누구입니다</string>
 </resources>
