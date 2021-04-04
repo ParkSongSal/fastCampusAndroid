@@ -33,6 +33,7 @@ class MainActivity : AppCompatActivity() {
         addItem("5) IntentTest(OpenUrl)", "2021-03-29", IntentTestActivity::class.java)
         addItem("6) Room 라이브러리", "2021-03-31", RoomTestActivity::class.java)
         addItem("7) Fragment", "2021-04-01", FragmentActivity::class.java)
+        addItem("8) NullSafety", "2021-04-04", NullSafetyActivity::class.java)
 
 
         mAdapter = MyAdapter(mDataList)
