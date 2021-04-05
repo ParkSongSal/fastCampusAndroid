@@ -35,7 +35,9 @@ class ThreadActivity : AppCompatActivity() {
         Thread(Runnable {
             Log.d("TAG"," thread-3 is made")
             Thread.sleep(2000)
-            threadBtn.setBackgroundColor(getColor(R.color.colorRed))
+            runOnUiThread { // android의 ui를 수정해야 하는 경우
+                threadBtn.setBackgroundColor(getColor(R.color.colorRed))
+            }
         }).start()
 
 
