@@ -35,6 +35,7 @@ class MainActivity : AppCompatActivity() {
         addItem("7) Fragment", "2021-04-01", FragmentActivity::class.java)
         addItem("8) NullSafety", "2021-04-04", NullSafetyActivity::class.java)
         addItem("9) Resoucre", "2021-04-04", ResourceActivity::class.java)
+        addItem("10) Context", "2021-04-05", ContextActivity::class.java)
 
 
         mAdapter = MyAdapter(mDataList)
