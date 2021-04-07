@@ -38,7 +38,7 @@ class MainActivity : AppCompatActivity() {
         addItem("10) Context", "2021-04-05", ContextActivity::class.java)
         addItem("11) Thread", "2021-04-05", ThreadActivity::class.java)
         addItem("12) Glide Lib", "2021-04-07", GlideLibActivity::class.java)
-
+        addItem("13) addView", "2021-04-07", addViewActivity::class.java)
 
         mAdapter = MyAdapter(mDataList)
 
