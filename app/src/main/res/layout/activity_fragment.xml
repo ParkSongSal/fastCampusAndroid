@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".FragmentActivity">
+
+
+   <!-- <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="50dp"
+        android:text="Hello!!"/>-->
+
+
+    <fragment
+        android:id="@+id/fragment_one"
+        android:name="com.example.fastcampusandroid.Fragment.FragmentOne"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"/>
+
+    <Button
+        android:id="@+id/addFragBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Frag추가!"/>
+    <Button
+        android:id="@+id/delFragBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Frag제거!"/>
+    <LinearLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="#A178EA"
+        android:orientation="vertical"/>
+</LinearLayout>

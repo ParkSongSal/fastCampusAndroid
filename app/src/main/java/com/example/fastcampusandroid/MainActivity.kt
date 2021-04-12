@@ -32,7 +32,13 @@ class MainActivity : AppCompatActivity() {
         addItem("4) Intent1", "2021-03-28", IntentActivity1::class.java)
         addItem("5) IntentTest(OpenUrl)", "2021-03-29", IntentTestActivity::class.java)
         addItem("6) Room 라이브러리", "2021-03-31", RoomTestActivity::class.java)
-
+        addItem("7) Fragment", "2021-04-01", FragmentActivity::class.java)
+        addItem("8) NullSafety", "2021-04-04", NullSafetyActivity::class.java)
+        addItem("9) Resoucre", "2021-04-04", ResourceActivity::class.java)
+        addItem("10) Context", "2021-04-05", ContextActivity::class.java)
+        addItem("11) Thread", "2021-04-05", ThreadActivity::class.java)
+        addItem("12) Glide Lib", "2021-04-07", GlideLibActivity::class.java)
+        addItem("13) addView", "2021-04-07", addViewActivity::class.java)
 
         mAdapter = MyAdapter(mDataList)
 

@@ -34,10 +34,10 @@ class MyAdapter(listitem: MutableList<ListItem>) : BaseAdapter() {
                 .inflate(R.layout.list, parent, false)
 
             // 레이아웃 들고 오기
-            val titleTextView = convertView.findViewById<View>(R.id.title_txt) as TextView
-            val dateTextView = convertView.findViewById<View>(R.id.date_txt) as TextView
-            viewHolder.titleTextView = titleTextView
-            viewHolder.dateTextView = dateTextView
+            val titleTextView = convertView.findViewById<View>(R.id.title_txt)
+            val dateTextView = convertView.findViewById<View>(R.id.date_txt)
+            viewHolder.titleTextView = titleTextView as TextView?
+            viewHolder.dateTextView = dateTextView as TextView?
             convertView.tag = viewHolder
         } else {
             // 재사용 할 때
