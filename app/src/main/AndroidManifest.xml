@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/MyTheme">
-        <activity android:name=".CallListActivity"></activity>
+        <activity android:name=".CallDetailActivity"></activity>
+        <activity android:name=".CallListActivity" />
         <activity android:name=".addViewActivity" />
         <activity android:name=".GlideLibActivity" />
         <activity android:name=".ThreadActivity" />

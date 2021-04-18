@@ -1,15 +1,15 @@
 package com.example.fastcampusandroid.adapters
 
 import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.BaseAdapter
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.fastcampusandroid.R
-import com.example.fastcampusandroid.Room.Users
 import com.example.fastcampusandroid.models.CallItem
+import org.greenrobot.eventbus.EventBus
 
 class CallAdapter() : RecyclerView.Adapter<CallAdapter.ViewHolder>(){
 
@@ -22,6 +22,11 @@ class CallAdapter() : RecyclerView.Adapter<CallAdapter.ViewHolder>(){
         mContext = context
     }
 
+    //Event Bus 클래스
+    class ItemClickEvent //this.id = id;
+        (//public long id;
+        var position: Int
+    )
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
 
@@ -41,6 +46,11 @@ class CallAdapter() : RecyclerView.Adapter<CallAdapter.ViewHolder>(){
 
         holder.nameTextView?.text = calls?.getName()
         holder.phoneNumTextView?.text = calls?.getPhoneNum()
+
+        holder.itemView.setOnClickListener { // MainActivity에 onItemClick이 받음
+            EventBus.getDefault().post(ItemClickEvent(position))
+            Log.d("TAG", "onBindViewHolder position 값 : $position")
+        }
 
     }
 

@@ -1,14 +1,15 @@
 package com.example.fastcampusandroid
 
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
-import android.widget.ListView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.fastcampusandroid.adapters.CallAdapter
-import com.example.fastcampusandroid.adapters.MyAdapter
+import com.example.fastcampusandroid.common.Common
 import com.example.fastcampusandroid.models.CallItem
-import com.example.fastcampusandroid.models.ListItem
-import kotlinx.android.synthetic.main.activity_room_test.*
+import org.greenrobot.eventbus.EventBus
+import org.greenrobot.eventbus.Subscribe
 
 class CallListActivity : AppCompatActivity() {
 
@@ -51,5 +52,27 @@ class CallListActivity : AppCompatActivity() {
         val item = CallItem(name, phoneNum)
         mDataList.add(item)
     }
+
+    @Subscribe
+    fun onItemClick(event: CallAdapter.ItemClickEvent) {
+
+        val intent = Intent(applicationContext, CallDetailActivity::class.java)
+            intent.putExtra("name", mDataList[event.position].getName())
+            intent.putExtra("phoneNum", mDataList[event.position].getPhoneNum())
+
+        startActivity(intent)
+    }
+
+
+    override fun onStart() {
+        super.onStart()
+        EventBus.getDefault().register(this)
+    }
+
+    override fun onStop() {
+        super.onStop()
+        EventBus.getDefault().unregister(this)
+    }
+
 
 }
