@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
+import android.view.View.inflate
 import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.TextView
@@ -43,13 +44,39 @@ class ListViewAdapter(
 
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
-        val LayoutInflater = LayoutInflater.from(context)
+       /*
+        1. 기본 방식 - findViewById로 인한 메모리 과부하로인하여 개선 필요
+       val LayoutInflater = LayoutInflater.from(context)
         val view = LayoutInflater.inflate(R.layout.item_call, null)
         var nameTextView = view.findViewById<TextView>(R.id.name_txt)
         var phoneNumTextView = view.findViewById<TextView>(R.id.phone_num_txt)
 
         nameTextView.text = callForList.get(position).getName()
         phoneNumTextView.text = callForList.get(position).getPhoneNum()
+
+        return view*/
+
+        /*
+        * 2. ViewHolder를 이용하여 findViewById 사용을 최소화
+        * */
+        val view : View
+        val holder : ViewHolder
+        val layoutInflater = LayoutInflater.from(context)
+        if(convertView == null){
+            view = layoutInflater.inflate(R.layout.item_call, null)
+            holder = ViewHolder()
+
+            holder.name = view.findViewById(R.id.name_txt)
+            holder.phoneNum = view.findViewById(R.id.phone_num_txt)
+
+            view.tag = holder
+        }else{
+            holder = convertView.tag as ViewHolder
+            view = convertView
+        }
+
+        holder.name?.text = callForList.get(position).getName()
+        holder.phoneNum?.text = callForList.get(position).getName()
 
         return view
     }
@@ -69,4 +96,9 @@ class ListViewAdapter(
         return callForList.size
     }
 
+}
+
+class ViewHolder{
+    var name : TextView? = null
+    var phoneNum : TextView? = null
 }
