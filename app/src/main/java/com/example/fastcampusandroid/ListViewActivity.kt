@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.TextView
+import android.widget.Toast
 import com.example.fastcampusandroid.models.CallItem
 import kotlinx.android.synthetic.main.activity_list_view.*
 
@@ -23,7 +24,12 @@ class ListViewActivity : AppCompatActivity() {
 
         val adapter = ListViewAdapter(callList, this@ListViewActivity)
         listView.adapter = adapter
+        listView.setOnItemClickListener{parent, view, position, id->
+            val name = (adapter.getItem(position) as CallItem).getName()
+            val phoneNum = (adapter.getItem(position) as CallItem).getPhoneNum()
 
+            Toast.makeText(this@ListViewActivity, "$name / $phoneNum", Toast.LENGTH_SHORT).show()
+        }
     }
 }
 
