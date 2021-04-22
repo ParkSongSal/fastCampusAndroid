@@ -2,12 +2,16 @@ package com.example.fastcampusandroid
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import android.widget.Toast
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.example.fastcampusandroid.models.CallItem
 import kotlinx.android.synthetic.main.activity_recycler_view.*
 
@@ -25,8 +29,9 @@ class RecyclerViewActivity : AppCompatActivity() {
         val adapter = RecyclerViewAdapter(callList, LayoutInflater.from(this@RecyclerViewActivity))
 
         recyclerView.adapter = adapter
-        recyclerView.layoutManager = LinearLayoutManager(this@RecyclerViewActivity)
-
+        //recyclerView.layoutManager = LinearLayoutManager(this@RecyclerViewActivity)
+        recyclerView.layoutManager = GridLayoutManager(this@RecyclerViewActivity,2)
+        //recyclerView.layoutManager = StaggeredGridLayoutManager(2,2)
     }
 }
 
@@ -34,12 +39,17 @@ class RecyclerViewActivity : AppCompatActivity() {
 class RecyclerViewAdapter(val itemList : ArrayList<CallItem>,
               val inflater : LayoutInflater) : RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>(){
 
-    class ViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView){
+    inner class ViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView){
         val name : TextView
         val phoneNum : TextView
         init{
             name = itemView.findViewById(R.id.name_txt)
             phoneNum = itemView.findViewById(R.id.phone_num_txt)
+            itemView.setOnClickListener{
+                val position : Int = adapterPosition
+                val name = itemList[position].getName()
+                Log.d("TAG","name : $name")
+            }
         }
     }
 
