@@ -28,10 +28,17 @@ class RecyclerViewActivity : AppCompatActivity() {
 
         val adapter = RecyclerViewAdapter(callList, LayoutInflater.from(this@RecyclerViewActivity))
 
-        recyclerView.adapter = adapter
-        //recyclerView.layoutManager = LinearLayoutManager(this@RecyclerViewActivity)
-        recyclerView.layoutManager = GridLayoutManager(this@RecyclerViewActivity,2)
-        //recyclerView.layoutManager = StaggeredGridLayoutManager(2,2)
+        
+        with(recyclerView){
+            this.adapter = adapter
+            this.layoutManager = GridLayoutManager(this@RecyclerViewActivity,2)
+        }
+        /*
+            recyclerView.adapter = adapter
+            //recyclerView.layoutManager = LinearLayoutManager(this@RecyclerViewActivity)
+            recyclerView.layoutManager = GridLayoutManager(this@RecyclerViewActivity,2)
+            //recyclerView.layoutManager = StaggeredGridLayoutManager(2,2)
+         */
     }
 }
 
