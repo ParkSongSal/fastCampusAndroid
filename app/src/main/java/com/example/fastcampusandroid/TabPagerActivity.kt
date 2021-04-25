@@ -9,6 +9,7 @@ import com.example.fastcampusandroid.Fragment.Fragment1
 import com.example.fastcampusandroid.Fragment.Fragment2
 import com.example.fastcampusandroid.Fragment.Fragment3
 import com.example.fastcampusandroid.Fragment.FragmentOne
+import com.google.android.material.tabs.TabLayout
 import kotlinx.android.synthetic.main.activity_tab_pager.*
 
 class TabPagerActivity : AppCompatActivity() {
@@ -20,6 +21,25 @@ class TabPagerActivity : AppCompatActivity() {
         tabLayout.addTab(tabLayout.newTab().setText("Two"))
         tabLayout.addTab(tabLayout.newTab().setText("Three"))
 
+
+        val pagerAdapter = PagerAdapter(supportFragmentManager, 3)
+        viewPager.adapter = pagerAdapter
+
+
+        tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener{
+            override fun onTabReselected(tab: TabLayout.Tab?) {
+            }
+
+            override fun onTabUnselected(tab: TabLayout.Tab?) {
+            }
+
+            override fun onTabSelected(tab: TabLayout.Tab?) {
+                viewPager.currentItem = tab!!.position
+            }
+        })
+
+        // 페이지가 이동했을때 탭을 이동시키는 코드
+        viewPager.addOnPageChangeListener(TabLayout.TabLayoutOnPageChangeListener(tabLayout))
     }
 }
 
