@@ -28,7 +28,7 @@ class RecyclerViewActivity : AppCompatActivity() {
 
         val adapter = RecyclerViewAdapter(callList, LayoutInflater.from(this@RecyclerViewActivity))
 
-        
+
         with(recyclerView){
             this.adapter = adapter
             this.layoutManager = GridLayoutManager(this@RecyclerViewActivity,2)
