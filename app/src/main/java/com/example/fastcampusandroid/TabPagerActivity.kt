@@ -8,7 +8,6 @@ import androidx.fragment.app.FragmentStatePagerAdapter
 import com.example.fastcampusandroid.Fragment.Fragment1
 import com.example.fastcampusandroid.Fragment.Fragment2
 import com.example.fastcampusandroid.Fragment.Fragment3
-import com.example.fastcampusandroid.Fragment.FragmentOne
 import com.google.android.material.tabs.TabLayout
 import kotlinx.android.synthetic.main.activity_tab_pager.*
 
@@ -22,7 +21,7 @@ class TabPagerActivity : AppCompatActivity() {
         tabLayout.addTab(tabLayout.newTab().setText("Three"))
 
 
-        val pagerAdapter = PagerAdapter(supportFragmentManager, 3)
+        val pagerAdapter = FragmentPagerAdpater(supportFragmentManager, 3)
         viewPager.adapter = pagerAdapter
 
 
@@ -43,7 +42,7 @@ class TabPagerActivity : AppCompatActivity() {
     }
 }
 
-class PagerAdapter(
+class FragmentPagerAdpater(
     fragmentManager: FragmentManager,
     val tabCount: Int
 ): FragmentStatePagerAdapter(fragmentManager){

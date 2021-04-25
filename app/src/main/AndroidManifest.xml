@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/MyTheme">
-        <activity android:name=".TabPagerActivity"></activity>
+        <activity android:name=".TabPager2Activity"></activity>
+        <activity android:name=".TabPagerActivity" />
         <activity android:name=".RecyclerViewActivity" />
         <activity android:name=".ListViewActivity" />
         <activity android:name=".CallDetailActivity" />

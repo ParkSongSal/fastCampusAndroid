@@ -43,6 +43,7 @@ class MainActivity : AppCompatActivity() {
         addItem("15) ListView", "2021-04-19", ListViewActivity::class.java)
         addItem("16) RecyclerView", "2021-04-13", RecyclerViewActivity::class.java)
         addItem("17) Tab&Pager", "2021-04-25", TabPagerActivity::class.java)
+        addItem("18) Tab&Pager2", "2021-04-25", TabPager2Activity::class.java)
 
         mAdapter = MyAdapter(mDataList)
 
