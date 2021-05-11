@@ -29,9 +29,12 @@
 - NoSQL
     - SQL말고 다르게 저장해보자!
 
-Android DataBase
+#Android DataBase
 - SQLiteDatabase
 - SharedPreference
     - Key / Value 방식
     - 목적 : 공유된 사용자의 기호
     - 하드하게 데이터베이스 시스템을 구축하기엔 적합하지 않다.
+
+#Realm Database(렘)
+
