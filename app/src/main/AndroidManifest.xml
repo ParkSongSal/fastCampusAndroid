@@ -9,7 +9,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/MyTheme">
-        <activity android:name=".addViewActivity"></activity>
+        <activity android:name=".SharedPreferenceActivity"></activity>
+        <activity android:name=".TabPager2Activity" />
+        <activity android:name=".TabPagerActivity" />
+        <activity android:name=".RecyclerViewActivity" />
+        <activity android:name=".ListViewActivity" />
+        <activity android:name=".CallDetailActivity" />
+        <activity android:name=".CallListActivity" />
+        <activity android:name=".addViewActivity" />
         <activity android:name=".GlideLibActivity" />
         <activity android:name=".ThreadActivity" />
         <activity android:name=".ContextActivity" />
