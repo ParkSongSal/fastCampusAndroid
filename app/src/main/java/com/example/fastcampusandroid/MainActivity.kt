@@ -46,6 +46,7 @@ class MainActivity : AppCompatActivity() {
         addItem("18) Tab&Pager2", "2021-04-25", TabPager2Activity::class.java)
         addItem("19) SharedPreference", "2021-05-06", SharedPreferenceActivity::class.java)
         addItem("20) Realm", "2021-05-11", RealmActivity::class.java)
+        addItem("21) Calendar", "2021-05-11", CalenderActivity::class.java)
 
         mAdapter = MyAdapter(mDataList)
 
